@@ -1,0 +1,30 @@
+{
+    "hotkey": {
+        "modifiers": [
+            "<ctrl>"
+        ],
+        "hotKey": "<f1>"
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "backspace": true,
+        "abbreviations": []
+    },
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "usageCount": 5,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "omitTrigger": false,
+    "modes": [
+        3
+    ],
+    "store": {},
+    "description": "demo",
+    "type": "script"
+}

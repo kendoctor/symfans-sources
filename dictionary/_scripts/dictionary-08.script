@@ -1,0 +1,68 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects/dictionary
+nano app.php
+wait:1
+nano:search:2 function find_action()
+    //display help
+    $help =<<<'HELP'
+Find vocabularies by the headword
+
+1.Input the headword of the vocabulary which you want to find.
+2.Input nothing to return main menu.
+
+HELP;
+
+    echo $help;
+
+    //loop continuing to find vocabularies, until input empty string
+    while(true)
+    {
+        //get the input 
+        $input = trim(get_input());
+
+        //if $input is empty, step out the function
+        if(empty($input))
+            return;
+
+        //load the dictionary
+        $dict = load_dictionary();
+        
+        //loop checking the headword to find the vocabulary
+        //if not found, alert failed message
+        //if found, display the vocabulary
+        $found = false;
+        foreach($dict as $headword => $explanation)
+        {
+            //case-senstivie comparing
+            if($headword == $input)
+            {
+                echo str_repeat("*", 100)."\n";
+                echo sprintf("%s : %s \n", $headword, $explanation);
+                echo str_repeat("*", 100)."\n"; 
+                $found = true;
+                //break out foreach cycle
+                break;
+            }
+        }
+
+        if(!$found)
+            echo sprintf("Vocabulary %s not found.\n", $input);
+    }
+nano:save
+php app.php
+wait:2
+3
+wait:2
+apple
+wait:2
+banana
+wait:2
+
+wait:2
+5
+wait:2
+git add app.php
+git commit -m "Find vocabularies by the headword done."
+voko:stop
+switch:kendoctor@kendoctor

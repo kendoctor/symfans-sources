@@ -1,0 +1,66 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects/dictionary
+nano app.php
+wait:1
+nano:search:2 function display_main_menu()
+
+    //define an array for holding action descriptions
+    $actions = [
+        "Add or update a vocabulary",
+        "List vocabularies",
+        "Find the vocabulary by headword",
+        "Remove the vocabulary by headword",
+        "Quit the program"
+    ];
+
+    echo "This is my own dictionary\n";
+
+    echo "Enter the indicator in [?] to execute the action\n\n";
+
+    //iterate $actions to display the action description
+    for($i=0; $i<count($actions); $i++)
+    {
+        echo sprintf("[%s]%s\n", $i+1, $actions[$i]);
+    }
+
+    echo "\n";
+
+nano:search:2 function quit()
+
+    echo "Thanks to use my dictionary. Good bye.\n";
+
+    //exit the program
+    exit(0);
+
+nano:search:2 function alert()
+
+    //strtoupper will convert characters in the string to uppercase
+    //vice versa, use strtolower to get lowercase
+    echo strtoupper("Please enter the right number for the action you want\n\n");
+
+nano:search:2 function get_input()
+
+    //open the stream for listening keyboard input
+    $handle = fopen("php://stdin", "r");
+    //wait and get the input when enter the return
+    $input = fgets($handle);
+    //close the stream
+    fclose($handle);
+
+    
+    return $input;
+
+nano:save
+php app.php
+wait:2
+1
+wait:2
+6
+wait:2
+5
+wait:2
+git add app.php
+git commit -m "Display main menu, quit the program and invalid operation alert done"
+voko:stop
+switch:kendoctor@kendoctor

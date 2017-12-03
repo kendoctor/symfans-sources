@@ -1,0 +1,63 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects/dictionary
+nano app.php
+wait:1
+nano:search:1 //display the main menu
+display_main_menu();
+nano:search:1 //get the keyboard input
+$input = intval(get_input());
+nano:search:1 //according to the input, execute the action
+switch(intval($input))
+{
+nano:search:1 //input 1 to add or update action
+    case 1:        
+        add_action();
+        break;
+
+nano:search:1 //input 2 to list action
+    case 2:        
+        list_action();
+        break;
+
+nano:search:1 //input 3 to find action
+    case 3:        
+        find_action();
+        break;
+
+nano:search:1 //input 4 to remove action
+    case 4:
+        remove_action();
+        break;
+
+nano:search:1 //input 5 to exit the program
+    case 5:
+        quit();
+        break;
+
+nano:search:1 //if the input does not equal the above, give an invalid operation alert
+    default:
+        alert();
+        
+}
+nano:zoomout
+nano:search:-1 //display the main menu
+
+
+//loop until the experssion of WHILE is not true
+while(true)
+{
+nano:end
+}
+nano:search:0 switch(intval($input))
+nano:mark
+nano:search:2 alert();
+nano:indent:1
+nano:mark
+nano:zoomin
+nano:save
+git add app.php
+git commit -m "Organize the overall control structure"
+wait:3
+voko:stop
+switch:kendoctor@kendoctor

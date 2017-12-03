@@ -1,0 +1,97 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects/dictionary
+nano app.php
+wait:1
+nano:search:1 //load dictionary from the file
+    $dict = load_dictionary();
+nano:search:1 //add or overwrite the vocabulary
+    $dict[$headword] = $explanation;
+nano:search:1 //save the dictionary into the file
+    save_dictionary($dict);
+nano:search:-4 function list_action() 
+/**
+ * Load vocabularies into an array from the file
+ * 
+ * @return array
+ */
+function load_dictionary()
+{
+    $dict = [];
+
+    //check if the file does exists
+    if(!file_exists("dict.dat"))
+    {
+        return $dict;
+    }
+
+    //open the file for read
+    $handle = fopen("dict.dat", "r");
+
+    //loop reading lines until the end
+    while($line = trim(fgets($handle)))
+    {
+        if(!empty($line))
+        {
+            //parse the line to headword and explanation
+            if($result = parse_vocabulary_input($line))
+            {
+                $dict[$result[0]] = $result[1];
+            }
+
+        }
+    }
+
+    //close the file
+    fclose($handle);
+
+    return $dict;
+}
+
+
+/**
+ * Save vocabularies in the array into the file
+ *
+ * @param  array $dict An array of vocabularies to be saved
+ */
+function save_dictionary($dict)
+{
+    //open the file for write
+    //if the file does not exist, it will create a new one
+    //if the file has contents, it will be cleared.
+    $handle = fopen("dict.dat", "w");
+
+    //sort the array by keys in asc order
+    ksort($dict);
+
+    foreach($dict as $headword => $explanation)
+    {
+        //"\r\n" means a new line with return
+        fputs($handle, sprintf("%s = %s\r\n", $headword, $explanation));
+    }
+
+    fclose($handle);
+}
+
+nano:save
+php app.php
+wait:2
+1
+wait:2
+apple = It's a type of apple.
+wait:2
+php = It's a programming language.
+wait:2
+
+wait:2
+5
+wait:2
+ls
+wait:2
+nano dict.dat
+wait:2
+nano:exit
+git add app.php
+git commit -m "The persistance of the dictionary done."
+voko:stop
+switch:kendoctor@kendoctor

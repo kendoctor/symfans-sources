@@ -1,0 +1,31 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects/dictionary
+nano app.php
+wait:1
+nano:search:2 function list_action()
+    //load the dictionary
+    $dict = load_dictionary();
+
+    echo "\n\n";
+
+    //loop displaying vocabularies
+    foreach($dict as $headword => $explanation)
+    {
+        //repeat a string N times
+        echo str_repeat("*", 100)."\n";
+        echo sprintf("%s : %s \n", $headword, $explanation);
+    }
+
+    echo str_repeat("*", 100)."\n";
+nano:save
+php app.php
+wait:2
+2
+wait:2
+5
+wait:2
+git add app.php
+git commit -m "List vocabularies done."
+voko:stop
+switch:kendoctor@kendoctor

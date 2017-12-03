@@ -1,0 +1,32 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects
+mkdir dictionary
+cd dictionary
+nano app.php
+wait:1
+<?php
+
+//display the main menu 
+
+//get the keyboard input
+
+//according to the input, execute the action
+    //input 1 to add or update action
+    
+    //input 2 to list action
+    
+    //input 3 to find action
+    
+    //input 4 to remove action
+    
+    //input 5 to exit the program
+    
+    //if the input does not equal the above, give an invalid operation alert
+nano:save
+git init
+git add app.php
+git commit -m "Describe the main procedure of the program"
+wait:3
+voko:stop
+switch:kendoctor@kendoctor

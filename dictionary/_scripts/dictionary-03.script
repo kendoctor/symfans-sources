@@ -1,0 +1,85 @@
+voko:start
+switch:kendoctor@kendoctor
+cd ~/symfans/symfans-projects/dictionary
+nano app.php
+wait:1
+nano:search:-2 //loop until the experssion of WHILE is not true
+
+/**
+ * Display main menu for selecting one action to execute
+ * 
+ */
+function display_main_menu()
+{
+
+}
+
+/**
+ * Enter into adding vocabuaries routine, until exit the action
+ */
+function add_action()
+{
+
+}
+
+/**
+ * Enter into listing vocabularies routine, until exit the action
+ */
+function list_action()
+{
+
+}
+
+/**
+ * Enter into finding vocabularies routine, until exit the action
+ * 
+ */
+function find_action()
+{
+
+}
+
+/**
+ * Enter into removing vocabularies routine, until exit the action
+ * 
+ */
+function remove_action()
+{
+
+}
+
+/**
+ * Exit the program
+ */
+function quit()
+{
+
+}
+
+/**
+ * Alert when enter the wrong action indictor
+ * 
+ */
+function alert()
+{
+
+}
+
+/**
+ * Listen and get keyboard input
+ * 
+ * @return string a single line string terimated with "\n"
+ */
+function get_input()
+{
+
+}
+
+nano:save
+php app.php
+cmd:<ctrl>+c
+wait: 2
+git add app.php
+git commit -m "Define functions of the overall program"
+voko:stop
+switch:kendoctor@kendoctor
