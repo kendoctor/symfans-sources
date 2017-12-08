@@ -6,3 +6,4 @@ file_put_contents("book.dat", "This is a new book.");
 $read = file_get_contents("book.dat");
 
 echo $read;
+echo "\n";
