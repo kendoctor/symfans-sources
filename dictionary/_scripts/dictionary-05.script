@@ -1,6 +1,7 @@
 voko:start
 switch:kendoctor@kendoctor
 cd ~/symfans/symfans-projects/dictionary
+clear
 nano app.php
 wait:1
 nano:search:2 function add_action()
@@ -11,7 +12,7 @@ nano:search:2 function add_action()
 
         //get keyboard input
 
-        //if input is empty, return back to main menu
+        //if the input is empty, return back to main menu
         
         //parse input to get the headword and explanation 
         //if success, save into dictionary and display successful notice
@@ -35,7 +36,7 @@ nano:search:1 //loop until get an empty string
 nano:search:1 //get keyboard input
         $input = trim(get_input());
 
-nano:search:1 //if input is empty, return back to main menu
+nano:search:1 //if the input is empty, return back to main menu
         if(empty($input))
         {
             return;
@@ -68,7 +69,7 @@ nano:search:-4 function list_action()
  * For example: apple = It's a type of fruit.
  * Return is: ["apple", "Its a type of fruit."]
  *
- * @param  string $input  input string
+ * @param  string $input  Input string
  * @return boolean|array  if success, return an array, otherwise FALSE
  */
 function parse_vocabulary_input($input)
@@ -106,7 +107,7 @@ php app.php
 wait:2
 1
 wait:2
-apple = It's a type of apple.
+apple = It's a type of fruit.
 wait:2
 php = It's a programming language.
 wait:2

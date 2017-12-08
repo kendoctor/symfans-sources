@@ -1,6 +1,7 @@
 voko:start
 switch:kendoctor@kendoctor
 cd ~/symfans/symfans-projects/dictionary
+clear
 nano app.php
 wait:1
 nano:search:2 function display_main_menu()
@@ -9,12 +10,12 @@ nano:search:2 function display_main_menu()
     $actions = [
         "Add or update a vocabulary",
         "List vocabularies",
-        "Find the vocabulary by headword",
-        "Remove the vocabulary by headword",
+        "Find the vocabulary by its headword",
+        "Remove the vocabulary by its headword",
         "Quit the program"
     ];
 
-    echo "This is my own dictionary\n";
+    echo "Welcome to use my dictionary\n";
 
     echo "Enter the indicator in [?] to execute the action\n\n";
 

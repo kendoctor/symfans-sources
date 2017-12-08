@@ -44,14 +44,14 @@ def typing_script(filename):
         elif line[:6] == "mouse:":
             mouse.wait_for_click(int(line[6:]), 100)
         elif line[:10] == "voko:start":
-            time.sleep(1)
+            time.sleep(2)
             window.activate("vokoscreen")
-            time.sleep(1)
+            time.sleep(2)
             keyboard.send_keys("<ctrl>+<shift>+<f10>")
         elif line[:9] == "voko:stop":
-            time.sleep(1)
+            time.sleep(2)
             window.activate("vokoscreen")
-            time.sleep(1)
+            time.sleep(2)
             keyboard.send_keys("<ctrl>+<shift>+<f11>")
         elif line[:7] == "switch:":
             window.activate(line[7:].strip())

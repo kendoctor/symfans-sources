@@ -1,2 +1,4 @@
 _backup/
 _dist/
+_auto/demo.py
+_auto/sample.py

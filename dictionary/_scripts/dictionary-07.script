@@ -1,6 +1,7 @@
 voko:start
 switch:kendoctor@kendoctor
 cd ~/symfans/symfans-projects/dictionary
+clear
 nano app.php
 wait:1
 nano:search:2 function list_action()

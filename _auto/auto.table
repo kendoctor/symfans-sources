@@ -1,0 +1,36 @@
+{
+    "subjects": [
+        {
+            "title": "dictionary",
+            "root": "symfans-courses",
+            "dist": "dictionary",
+            "src": "scripts",
+            "backup": "backup",
+            "scripts": {
+                "dictionary-01.script": true,
+                "dictionary-02.script": true,
+                "dictionary-03.script": true,
+                "dictionary-04.script": true,
+                "dictionary-05.script": true,
+                "dictionary-06.script": true,
+                "dictionary-07.script": true,
+                "dictionary-08.script": true,
+                "dictionary-09.script": true
+            },
+            "enabled" : true
+        },
+        {
+            "title": "demo",
+            "root": "symfans-courses",
+            "dist": "demo",
+            "src": "scripts",
+            "backup": "backup",
+            "scripts": {
+                "demo-01.script": true,
+                "demo-02.script": false,
+                "demo-03.script": false
+            },
+            "enabled" : false
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 voko:start
 switch:kendoctor@kendoctor
 cd ~/symfans/symfans-projects/dictionary
+clear
 nano app.php
 wait:1
 nano:search:1 //load dictionary from the file
@@ -78,7 +79,7 @@ php app.php
 wait:2
 1
 wait:2
-apple = It's a type of apple.
+apple = It's a type of fruit.
 wait:2
 php = It's a programming language.
 wait:2

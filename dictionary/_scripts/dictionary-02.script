@@ -1,6 +1,7 @@
 voko:start
 switch:kendoctor@kendoctor
 cd ~/symfans/symfans-projects/dictionary
+clear
 nano app.php
 wait:1
 nano:search:1 //display the main menu
@@ -54,6 +55,7 @@ nano:mark
 nano:search:2 alert();
 nano:indent:1
 nano:mark
+wait:2
 nano:zoomin
 nano:save
 git add app.php

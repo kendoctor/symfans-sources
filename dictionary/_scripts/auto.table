@@ -1,15 +1,15 @@
 {
 	"title": "dictionary",
 	"scripts": {
-	    "dictionary-01.script": true,
-	    "dictionary-02.script": true,
-	    "dictionary-03.script": true,
-	    "dictionary-04.script": true,
+	    "dictionary-01.script": false,
+	    "dictionary-02.script": false,
+	    "dictionary-03.script": false,
+	    "dictionary-04.script": false,
 	    "dictionary-05.script": true,
-	    "dictionary-06.script": true,
-	    "dictionary-07.script": true,
-	    "dictionary-08.script": true,
-	    "dictionary-09.script": true
+	    "dictionary-06.script": false,
+	    "dictionary-07.script": false,
+	    "dictionary-08.script": false,
+	    "dictionary-09.script": false
 	},
 	"enabled": true
 }
