@@ -12,3 +12,10 @@ fclose($handle);
 echo $input;
 
 
+//input and output just like reading and writing 
+file_put_contents("book.dat", $input);
+
+$read = file_get_contents("book.dat");
+
+echo $input;
+
