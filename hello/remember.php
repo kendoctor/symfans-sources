@@ -37,3 +37,26 @@ $map = [
 	"favorite fruits" => ["apple", "banana", "orange"]
 ];
 
+
+//output all these values
+
+//heredoc string definition
+$formatted = <<<"OUTPUT"
+	words: %s
+	weight: %d
+	money: %.2f
+	text: %s 
+	a new line : %s 
+	are your a girl : %d
+
+OUTPUT;
+
+//get a formatted string
+echo sprintf($formatted, $words, $weight, $money, $text, $newline, $are_you_a_girl);
+
+//dump out array values
+print_r($fruits);
+
+print_r($mixed);
+
+print_r($map);
