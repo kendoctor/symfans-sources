@@ -49,3 +49,19 @@ $answer = think($question);
 
 speak($answer);
 
+
+while(true)
+{
+	speak("What's your question?");
+
+	$question = listen();
+
+	//if nothing heard, we break out the WHILE loop
+	if(empty($question))
+		break;
+
+	$answer = think($question);
+
+	speak($answer);
+
+}
