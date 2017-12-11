@@ -1,0 +1,31 @@
+voko:start
+switch:kendoctor@kendoctor
+clear
+cd ~/symfans/symfans-projects/hello
+nano io.php
+wait:1
+<?php
+
+//input and output just like reading and writing 
+//write something into a file named "book.dat"
+file_put_contents("book.dat", "This is a new book.");
+
+//read contents from the file
+$read = file_get_contents("book.dat");
+
+//output the contents 
+echo $read;
+
+//"\n" represents new line
+echo "\n";
+nano:save
+php io.php
+nano book.dat
+wait:2
+nano:exit
+wait:2
+git add io.php
+git commit -m "output and input just like reading and writing or speaking and listening"
+wait:3
+voko:stop
+switch:kendoctor@kendoctor

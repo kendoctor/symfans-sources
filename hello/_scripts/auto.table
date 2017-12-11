@@ -1,0 +1,15 @@
+{
+	"title": "dictionary",
+	"scripts": {
+	    "hello-01.script": false,
+	    "hello-02.script": false,
+	    "hello-03.script": false,
+	    "hello-04.script": false,
+	    "hello-05.script": false,
+	    "hello-06.script": false,
+	    "hello-07.script": true,
+	    "hello-08.script": false,
+	    "hello-09.script": false
+	},
+	"enabled": true
+}

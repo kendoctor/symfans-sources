@@ -1,0 +1,98 @@
+voko:start
+switch:kendoctor@kendoctor
+clear
+cd ~/symfans/symfans-projects/hello
+nano function.php
+wait:1
+<?php
+
+//we have seen many build-in functions in PHP before. 
+//we also can define your own functinons
+
+//speak out to the console 
+function speak($words)
+{
+	echo $words."\n";
+}
+
+//listen to the console
+function listen()
+{
+	$handle = fopen("php://stdin", "r");
+	$heard = fgets($handle);
+	fclose($handle);
+
+	return trim($heard);
+}
+
+//think question to get the answer
+function think($question)
+{
+	switch($question)
+	{
+		case "What's your name?":
+			return "I'm Jack";
+			break;
+		case "What's your job?":
+			return "I'm a developer.";
+			break;
+		case "Where are you from?":
+			return "I'm from American.";
+			break;
+		default: 
+			return "I have no idea about your question.";
+			break;
+	}
+
+}
+
+
+speak("What's your question?");
+
+$question = listen();
+
+$answer = think($question);
+
+speak($answer);
+
+nano:save
+php function.php
+wait:2
+What's your name?
+wait:2
+nano function.php
+wait:1
+nano:search:-1 speak("What's your question?");
+while(true)
+{
+nano:end
+wait:1
+}
+wait:1
+nano:search:2 $question = listen();
+
+//if nothing heard, we break out the WHILE loop
+if(empty($question))
+	break;
+
+nano:search:0 speak("What's your question?");
+nano:mark
+nano:search:1 speak($answer);
+nano:indent:1
+nano:mark
+wait:2
+nano:save
+php function.php
+What's your name?
+wait:1
+What's your job?
+wait:1
+Where are you from?
+wait:1
+
+wait:2
+git add function.php
+git commit -m "Define your own functions"
+wait:3
+voko:stop
+switch:kendoctor@kendoctor

@@ -1,0 +1,24 @@
+voko:start
+switch:kendoctor@kendoctor
+clear
+cd ~/symfans/symfans-projects/hello
+nano listen.php
+wait:1
+<?php
+
+//listen to the keyboard input and catch the input
+$handle =  fopen("php://stdin", "r");
+$input = fgets($handle);
+fclose($handle);
+
+//output the input, just like repeat what you said.
+echo $input;
+nano:save
+php listen.php
+Hello
+wait:3
+git add listen.php
+git commit -m "listen to keyboard input"
+wait:3
+voko:stop
+switch:kendoctor@kendoctor

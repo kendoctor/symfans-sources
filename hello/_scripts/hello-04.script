@@ -1,0 +1,76 @@
+voko:start
+switch:kendoctor@kendoctor
+clear
+cd ~/symfans/symfans-projects/hello
+nano remember.php
+wait:1
+<?php
+
+//a variable can temporarily hold a value.
+$words = "Please, remember what I said.";
+
+//we can store values into files or databases for permanent storage.
+file_put_contents("remember.dat", $words);
+
+//data types for varaibles
+
+//integer
+$weight = 250;
+
+//float or double
+$money = 2500.50;
+
+//string
+$text = "printable characters, white spaces or some unprintable characters.";
+
+//this is a new line character. not two. 
+$newline = "\n";
+
+//a boolean only holds true or false 
+$are_you_a_girl = false;
+
+//package a list of values as one in an array
+$fruits = array("apple", "banana", "orange");
+
+//a list of mixed values, [] is a shorthand for creating an array
+$mixed = [250, false, "apple", 2500.50]; 
+
+//use an array as a map
+$map = [
+	"name" => "Jack",
+	"age" => 25,
+	"sex" => true,
+	"favorite fruits" => ["apple", "banana", "orange"]
+];
+
+
+//output all these values
+
+//heredoc string definition
+$formatted = <<<"OUTPUT"
+	words: %s
+	weight: %d
+	money: %.2f
+	text: %s 
+	a new line : %s 
+	are your a girl : %d
+
+OUTPUT;
+
+//get a formatted string
+echo sprintf($formatted, $words, $weight, $money, $text, $newline, $are_you_a_girl);
+
+//dump out array values
+print_r($fruits);
+
+print_r($mixed);
+
+print_r($map);
+nano:save
+php remember.php
+wait:2
+git add remember.php
+git commit -m "variables and data types"
+wait:3
+voko:stop
+switch:kendoctor@kendoctor

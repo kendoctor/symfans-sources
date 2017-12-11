@@ -1,0 +1,34 @@
+voko:start
+switch:kendoctor@kendoctor
+clear
+cd ~/symfans/symfans-projects
+mkdir hello
+cd hello
+nano hello.php
+wait:1
+<?php
+
+echo "Hello, welcome to php world.\n";
+nano:save
+php hello.php
+wait:3
+php -S localhost:8080
+switch:Mozilla firefox
+cmd:<alt>+d
+localhost:8080/hello.php
+cmd:<enter>
+wait:3
+switch:kendoctor@kendoctor
+cmd:<ctrl>+c
+nano hello.php
+nano:search:0 echo "Hello, welcome to php world.\n";
+
+//echo is a php function which can output text to the console or the browser.
+wait:2
+nano:save
+git init
+git add hello.php
+git commit -m "This is my first php program."
+wait:3
+voko:stop
+switch:kendoctor@kendoctor
